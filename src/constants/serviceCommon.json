@@ -1,0 +1,80 @@
+{
+    "about": {
+        "title": "About VBDGisServer",
+        "titleChild": "General information about VBDGisServer",
+        "build_Information": {
+            "version": "1.0.0",
+            "buildDate": "2025-02-25 10:00 AM"
+        },
+        "more_Information": "GisServer publishes data from any major spatial data source using open standards. GisServer implements several Open Geospatial Consortium protocols including Web Map Service (WMS), Web Feature Service (WFS), Web Coverage Service (WCS) and Web Map Tile Service (WMTS). Additional extensions are available for Catalogue Service (CSW) and Web Processing Service (WPS).\nThis web administration interface allows for easy configuration of GisServer. After logging in, please use the menus on the left to navigate through the interface.\nThe About and Status menu lists technical details about the running GisServer instance.\nThe Data menu is used to configure data sources and styling.\nThe Service menu provides configuration for web services.\nThe Settings menu provides configurations options that apply to all services (i.e. server-wide).\nThe Tile Caching menu allows configuration of the embedded tile cache.\nThe Security menu allows configuration of access controls (authentication and authorization).",
+        "vietbando_Information": [
+            "http://maps.vietbando.com/"
+        ],
+        "useful_Links": [
+            "http://10.222.3.84:1357/docs/category/vietbando-map-services",
+            "http://10.222.3.84:1357/docs/category/vietbando-ogc-services"
+        ]
+    },
+    "timeFetch": 5000,
+    "services": [
+        {
+            "name": "WPS",
+            "host": "http://10.225.0.234",
+            "port": 8095,
+            "APIstatus": "/Vietbando/api/v1/wps?SERVICE=WPS&REQUEST=Status",
+            "APIGetList": "",
+            "APIDetail": "/vietbando/api/v1/wps?service=WPS&version=1.0.0&request=GetCapabilities"
+        },
+        {
+            "name": "WMTS",
+            "host": "http://10.222.3.81",
+            "port": 8091,
+            "APIstatus": "/Vietbando/api/v1/wmts?SERVICE=WMTS&REQUEST=Status",
+            "APIGetList": "/Vietbando/api/v1/wmts/rest/capabilities?function=list",
+            "APIDetail": "/vietbando/api/v1/wmts/rest/"
+        },
+        {
+            "name": "WMS",
+            "host": "http://10.222.3.81",
+            "port": 8092,
+            "APIstatus": "/Vietbando/api/v1/wms?SERVICE=WMS&REQUEST=Status",
+            "APIGetList": "/Vietbando/api/v1/wms/rest/capabilities?function=list",
+            "APIDetail": "/vietbando/api/v1/wms/rest/"
+        },
+        {
+            "name": "WFS",
+            "host": "http://10.222.3.81",
+            "port": 8093,
+            "APIstatus": "/Vietbando/api/v1/wfs?SERVICE=WFS&REQUEST=Status",
+            "APIGetList": "/Vietbando/api/v1/wfs/rest/capabilities?function=list",
+            "APIDetail": "/vietbando/api/v1/wfs/rest/"
+        },
+        {
+            "name": "CSW",
+            "host": "http://10.225.0.234",
+            "port": 8090,
+            "APIstatus": "/Vietbando/api/v1/csw?SERVICE=CSW&REQUEST=Status",
+            "APIDetail": "/vietbando/api/v1/csw?SERVICE=CSW&REQUEST=GetCapabilities",
+            "APIGetList": ""
+        }
+    ],
+    "defaultMap": {
+        "Id": "MapConfig",
+        "Host": "http://10.222.3.81",
+        "Port": "8083"
+    },
+    "authentication": {
+        "Product_id": "285d815a-14d2-471a-9653-23e7035de0a7",
+        "APILogin": "http://10.222.3.84:18081/token/v1/login",
+        "APIValid": "http://10.222.3.84:18081/token/v1/validate",
+        "APIGet_Register": "http://10.222.3.84:18084/admin/v1/user",
+        "APIGetUsers": "http://10.222.3.84:18081/admin/v1/user?productid=",
+        "APIUpdateRole": "http://10.222.3.84:18084/admin/v1/authorization",
+        "DefineRole": {
+            "admin_system": "60612643-cb8c-4fc6-acd6-3f3019faf451",
+            "editor": "44314da1-ba7b-4994-8157-24f4126d0a94",
+            "user_guest": "fd645b1d-f3a3-44e3-a555-2ca9c498c476"
+        },
+        "tokenRegister": "eyJhbGciOiJIUzI1NiIsInR5cCI6IjEyNTY1NDYyIn0.eyJhdWQiOiJjMjJmNDFlNi05YjMxLTRiYTMtODgwZS05NDQ2YTc5ZjY2ZTQiLCJhdXRob3JpemF0aW9uIjoiW3tcImlkXCI6XCJkZmQ0MjQ4Yy1mMDEzLTQ3N2YtYTgwOS03ZTYyZDUyMTliMmJcIixcInJvbGVpZFwiOlwiZmQ2NDViMWQtZjNhMy00NGUzLWE1NTUtMmNhOWM0OThjNDc2XCIsXCJ1c2VyaWRcIjpcImMyMmY0MWU2LTliMzEtNGJhMy04ODBlLTk0NDZhNzlmNjZlNFwifV0iLCJleHAiOjIzNDU4NzUxOTYuMzU1NDI4LCJpYXQiOjE3NDEwNzUxOTYuMzU1NDI4LCJpc3MiOiJ2YmR3ZiIsIm5iZiI6MTc0MTA3NTE5Ni4zNTU0MjgsInByb2R1Y3RpZCI6IjJmZWUyZTNmLWZlODctNDQyOS04NTMxLWI1OGJjMjY2MGYwYSIsInN1YiI6IkpXVCJ9.0AouThD7L4W7hJaqu_AE0SfjE7SwuK8-z00buu8zlZQ"
+    }
+}
